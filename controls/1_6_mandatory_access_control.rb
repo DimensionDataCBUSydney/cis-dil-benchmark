@@ -82,7 +82,7 @@ if cis_level == '2'
     end
 
     describe command('sestatus') do
-      its(:stdout) { should match(/Policy from config file:\s+(targeted|mls)/) }
+      its(:stdout) { should match(/Loaded policy name:\s+(targeted|mls)/) }
     end
   end
 

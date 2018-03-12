@@ -37,8 +37,8 @@ control 'cis-dil-benchmark-5.3.1' do
   describe.one do
     %w(common-password system-auth).each do |f|
       describe file("/etc/pam.d/#{f}") do
-        its(:content) { should match(/^password requisite pam_pwquality\.so (\S+\s+)*try_first_pass/) }
-        its(:content) { should match(/^password requisite pam_pwquality\.so (\S+\s+)*retry=[3210]/) }
+        its(:content) { should match(/^password (\S+\s+)*requisite (\S+\s+)*pam_pwquality\.so (\S+\s+)*try_first_pass/) }
+        its(:content) { should match(/^password (\S+\s+)*requisite (\S+\s+)*pam_pwquality\.so (\S+\s+)*retry=[3210]/) }
       end
     end
   end
